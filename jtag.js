@@ -64,7 +64,7 @@ space = " ";
 
     _jInput = window.jInput,
     jInput = window.jInput = function( name, value, type ) {
-    	return jTag().with(input, "", 
+    	return jTag(input, "", 
     	  [jAttribute("id", name), 
     	  jAttribute("value", value || ""), 
     	  jAttribute("type", type)].join(' '));
@@ -76,7 +76,7 @@ space = " ";
     },
     _jLabel = window.jLabel,
     jLabel = window.jLabel = function( name, value ) {
-      return jTag().with(label, value, jAttribute("for", name));
+      return jTag(label, value, jAttribute("for", name));
     };
     _jHidden = window.jHidden,
     jHidden = window.jHidden = function( name, value ) {
