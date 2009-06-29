@@ -84,7 +84,7 @@ space = " ";
     };
     _jArea = window.jArea,
     jArea = window.jArea = function( name, value, attr ) {
-      return jTag(textarea, value || "", attr || "");
+      return jTag(textarea, value || "", [attr || "", jAttribute("id", name)].join(' ') );
     };
     
 })();
