@@ -82,4 +82,9 @@ space = " ";
     jHidden = window.jHidden = function( name, value ) {
       return jInput(name, value, "hidden");
     };
+    _jArea = window.jArea,
+    jArea = window.jArea = function( name, value ) {
+      return jArea(name, value, "textarea");
+    };
+    
 })();
