@@ -26,6 +26,17 @@
       } catch (err) {
         alert(err);
       }
+      // Feature: Test HR and BR
+      try {
+        document.write(
+          jTag(p, "Before HR") +
+          jTag(hr) +
+          jTag(p, "After HR") +
+          jTag(p, "Before BR" + jTag(br) + "After BR")
+        );
+      } catch (err) {
+        alert(err);
+      }
       
       // Feature: Radio Button Test
       x = [{ name: "radio", value: 1}, {name: "radio", value: 2}, { name: "radio", value: 3}];
