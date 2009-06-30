@@ -37,6 +37,16 @@
       } catch (err) {
         alert(err);
       }
+
+      // Feature: Test Span and Div tage
+      try {
+        document.write(
+          jTag(div, "I am in a div", jAttribute("id","mydiv")) +
+          jTag(span, "I am in a span", jAttribute("color","blue"))
+        );
+      } catch (err) {
+        alert(err);
+      }
       
       // Feature: Radio Button Test
       x = [{ name: "radio", value: 1}, {name: "radio", value: 2}, { name: "radio", value: 3}];
