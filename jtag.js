@@ -1,5 +1,5 @@
 /*
-* Tag JavaScript Library v0.1.0
+* Tag JavaScript Library v0.2.0
 * http://tag.jackhq.com
 *
 * Copyright (c) 2009 Jack Russell Software Company, LLC
@@ -99,6 +99,10 @@ space = " ";
     _jArea = window.jArea,
     jArea = window.jArea = function( name, value, attr ) {
       return jTag(textarea, value || "", [attr || "", jAttribute("id", name)].join(' ') );
+    };
+    _jCheck = window.jCheck,
+    jCheck = window.jCheck = function( name, value, args ) {
+      return jInput(name, value, "checkbox", args)
     };
     
 })();
