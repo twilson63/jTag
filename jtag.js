@@ -69,13 +69,15 @@ space = " ";
     },
 
     _jInput = window.jInput,
-    jInput = window.jInput = function( name, value, type ) {
+    jInput = window.jInput = function( name, value, type, args ) {
     	return jTag(input, "", 
     	  [ 
     	  jAttribute("id", type == "radio" ? [name,value].join('_') : name),
     	  jAttribute("name", name), 
     	  jAttribute("value", value || ""), 
-    	  jAttribute("type", type)].join(' '));
+    	  jAttribute("type", type),
+    	  args || ""
+    	  ].join(' '));
 
     },
     _jText = window.jText,
@@ -83,16 +85,16 @@ space = " ";
       return jInput(name, value, "text");
     },
     _jLabel = window.jLabel,
-    jLabel = window.jLabel = function( name, value ) {
-      return jTag(label, value, jAttribute("for", name));
+    jLabel = window.jLabel = function( name, value, args ) {
+      return jTag(label, value, jAttribute("for", name) + args + "");
     };
     _jHidden = window.jHidden,
     jHidden = window.jHidden = function( name, value ) {
       return jInput(name, value, "hidden");
     };
     _jRadio = window.jRadio,
-    jRadio = window.jRadio = function( name, value ) {
-      return jInput(name, value, "radio");
+    jRadio = window.jRadio = function( name, value, args ) {
+      return jInput(name, value, "radio", args);
     };
     _jArea = window.jArea,
     jArea = window.jArea = function( name, value, attr ) {
