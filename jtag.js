@@ -65,7 +65,9 @@ space = " ";
     _jInput = window.jInput,
     jInput = window.jInput = function( name, value, type ) {
     	return jTag(input, "", 
-    	  [jAttribute("id", name), 
+    	  [ 
+    	  jAttribute("id", type == "radio" ? [name,value].join('_') : name),
+    	  jAttribute("name", name), 
     	  jAttribute("value", value || ""), 
     	  jAttribute("type", type)].join(' '));
 
@@ -81,6 +83,10 @@ space = " ";
     _jHidden = window.jHidden,
     jHidden = window.jHidden = function( name, value ) {
       return jInput(name, value, "hidden");
+    };
+    _jRadio = window.jRadio,
+    jRadio = window.jRadio = function( name, value ) {
+      return jInput(name, value, "radio");
     };
     _jArea = window.jArea,
     jArea = window.jArea = function( name, value, attr ) {

@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>jTag Tests</title>
+    <script src="jquery.min.js" type="text/javascript"></script>
+    <script src="jtag.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // Test Error Handling
+      try {
+        throw "Hello Error"
+      }
+      catch(err) {
+        alert(err)
+      }
+      // Feature: Radio Button Test
+      x = [{ name: "radio", value: 1}, {name: "radio", value: 2}, { name: "radio", value: 3}];
+      try {
+        document.write(
+          jTag(h3, "Feature: Radio Button Test") +
+          $.map(x, function (n, i) {
+            return jLabel(n.name, n.name) +
+             jRadio(n.name, n.value);
+          }).join(' ')
+        );
+      }
+      catch (err) {
+        alert(err);
+      }
+      // Feature: Text Box Test
+      try {
+        document.write(
+          jTag(h3, "Feature: Text Box Test") +
+          jLabel("name", "Full Name") +
+          jText("name")
+        );
+      }
+      catch (err) {
+        alert(err);
+      }
+
+    </script>
+    
+  </body>
+</html>
