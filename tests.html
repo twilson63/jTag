@@ -118,6 +118,18 @@
               jTag(p, "Cras non vulputate erat. Etiam scelerisque purus ut turpis bibendum auctor non et risus. Aenean euismod augue eget dolor consectetur laoreet. Vestibulum nec faucibus elit. Aenean sed dui augue, ac tempor elit. Etiam euismod consectetur eleifend. Mauris suscipit placerat pellentesque. Suspendisse potenti. Donec diam massa, auctor sed tempus nec, tristique sed nibh. In hac habitasse platea dictumst. ")
             )
           )
+
+        }
+        catch (err) {
+          alert(err);
+        }
+
+      // Feature: Select Test
+      try {
+        document.write(
+          jTag(h3, "Feature: Select Test") +
+          jLabel("name", "Favorite Color") +
+          jSelect("name",[{ id: 1, name: "Red" },{ id: 2, name: "Blue" }])
         );
       }
       catch (err) {
