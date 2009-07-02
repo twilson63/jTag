@@ -30,6 +30,8 @@ div = "<div>?</div>",
 span = "<span>?</span>",
 input = "<input>?</input>",
 textarea = "<textarea>?</textarea>",
+select = "<select>?</select>",
+option = "<option>?</option>",
 label = "<label>?</label>",
 form = "<form>?</form>",
 table = "<table>?</table>",
@@ -104,5 +106,15 @@ space = " ";
     jCheck = window.jCheck = function( name, value, args ) {
       return jInput(name, value, "checkbox", args)
     };
-    
+
+    _jSelect = window.jSelect,
+    jSelect = window.jSelect = function( name, values, args ) {
+      options = "";
+      for (o in values) {
+        options += jTag(option, values[o], jAttribute("value", values[o]));
+      }
+      alert(options);
+      return jTag(select, options, [args || "", jAttribute("id", name)].join(' '));
+    };
+
 })();
