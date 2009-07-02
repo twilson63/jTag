@@ -110,8 +110,13 @@ space = " ";
     _jSelect = window.jSelect,
     jSelect = window.jSelect = function( name, values, args ) {
       options = "";
-      for (o in values) {
-        options += jTag(option, values[o], jAttribute("value", values[o]));
+      for(i = 0; i < values.length; i++) {
+        if(values[i].id && values[i].name) {
+            options += jTag(option, values[i].name, jAttribute("value", values[i].id));
+        } else {
+            options += jTag(option, values[i], jAttribute("value", values[i]));
+            
+        }
       }
       alert(options);
       return jTag(select, options, [args || "", jAttribute("id", name)].join(' '));

@@ -106,6 +106,20 @@
         alert(err);
       }
 
+      // Feature: Select Test
+      try {
+        document.write(
+          jTag(h3, "Feature: Select Test") +
+          jLabel("name", "Favorite Color") +
+          jSelect("name",[{ id: 1, name: "Red" },{ id: 2, name: "Blue" }])
+        );
+      }
+      catch (err) {
+        alert(err);
+      }
+
+
+
     </script>
     
   </body>
