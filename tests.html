@@ -106,6 +106,24 @@
         alert(err);
       }
 
+      // Feature: jSpan - Create a div class with a blueprint colspan
+      try {
+        document.write(
+          jClass(["span-16"],
+            jTag(h3, "Feature: Select Test") +
+            jTag(p, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget metus arcu. Sed lorem lorem, mattis id gravida quis, mollis eu erat. Aliquam tincidunt lectus ac augue faucibus sit amet gravida ante imperdiet. Donec sodales lacus vel sapien lacinia blandit et et orci. Cras eu magna id metus ultrices tempus. Nulla et tortor et urna tincidunt porttitor. Proin scelerisque mattis suscipit. Maecenas vestibulum ornare nisi, non sodales risus scelerisque sed. Donec id felis ligula. Donec vestibulum turpis eu dolor fringilla sed vulputate ipsum dictum. Sed at est urna. Etiam quis tortor libero, et molestie diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;")
+           ) +
+          jClass(["span-7"],
+            jClass(["box"],
+              jTag(p, "Cras non vulputate erat. Etiam scelerisque purus ut turpis bibendum auctor non et risus. Aenean euismod augue eget dolor consectetur laoreet. Vestibulum nec faucibus elit. Aenean sed dui augue, ac tempor elit. Etiam euismod consectetur eleifend. Mauris suscipit placerat pellentesque. Suspendisse potenti. Donec diam massa, auctor sed tempus nec, tristique sed nibh. In hac habitasse platea dictumst. ")
+            )
+          )
+        );
+      }
+      catch (err) {
+        alert(err);
+      }
+
     </script>
     
   </body>

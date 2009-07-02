@@ -117,4 +117,9 @@ space = " ";
       return jTag(select, options, [args || "", jAttribute("id", name)].join(' '));
     };
 
+    _jClass = window.jClass,
+    jClass = window.jClass = function( classes, innerHtml, args ) {
+      attributes = jAttribute("class", classes.join(' '));
+      return jTag(div, innerHtml, [args || "", attributes].join(' '));
+    }
 })();
