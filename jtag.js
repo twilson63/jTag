@@ -122,9 +122,33 @@ space = " ";
       return jTag(select, options, [args || "", jAttribute("id", name)].join(' '));
     };
 
-    _jClass = window.jClass,
-    jClass = window.jClass = function( classes, innerHtml, args ) {
-      attributes = jAttribute("class", classes.join(' '));
-      return jTag(div, innerHtml, [args || "", attributes].join(' '));
+    _jDiv = window.jDiv,
+    jDiv = window.jDiv = function( arg1, arg2, arg3, arg4 ) {
+      id = "";
+      classes = [];
+      innerHtml = "";
+      attributes = "";
+    
+      if(typeof(arg1) == "object") {
+        classes = arg1;
+        innerHtml = arg2;
+        attributes = arg3;
+      }
+      else if(typeof(arg1) == "string") {
+        id = arg1;
+        if (typeof(arg2) == "object") {
+          classes = arg2;
+          innerHtml = arg3;
+          attributes = arg4;
+        } else {
+          innerHtml = arg2;
+          attributes = arg3;
+        }
+      }
+      
+      classes = jAttribute("class", classes.join(' '));
+      id = jAttribute("id", id);
+      
+      return jTag(div, innerHtml, [attributes || "", classes, id].join(' '));
     }
 })();
