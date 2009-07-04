@@ -15,12 +15,12 @@ This library makes it really easy to generate html markup in javascript:
       )
     );
     
-# Lab
+## Lab
 
 Check out the jTag Lab at [jtag2html.heroku.com](http://jtag2html.heroku.com)
 
 
-# Welcome to jTag
+## Features
 
 jTag Features
 
@@ -28,4 +28,15 @@ jTag Features
 * Easy way to structure markup for read-ability
 * Integrates with jQuery and should work with other libs
 * FormHelpers for writting forms and fields
+* Simple tables
+* Simple Divs
+
+## Support
+
+If you find a bug or have a change request submit to [http://groups.google.com/group/jtag-support](http://groups.google.com/group/jtag-support)
+
+## Contribution
+
+If you have a patch please submit to [jtag@jackhq.com](mailto://jtag@jackhq.com)
+
 
