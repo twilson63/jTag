@@ -17,7 +17,7 @@ This library makes it really easy to generate html markup in javascript:
     
 # Lab
 
-Check out the jTag Lab at [jtag2html.heroku.com](jtag2html.heroku.com)
+Check out the jTag Lab at [jtag2html.heroku.com](http://jtag2html.heroku.com)
 
 
 # Welcome to jTag
