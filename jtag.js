@@ -1,5 +1,5 @@
 /*
-* Tag JavaScript Library v0.2.0
+* Tag JavaScript Library v0.3.0
 * http://tag.jackhq.com
 *
 * Copyright (c) 2009 Jack Russell Software Company, LLC
@@ -40,6 +40,9 @@ tr = "<tr>?</tr>",
 tbody = "<tbody>?</tbody>",
 td = "<td>?</td>",
 th = "<th>?</th>",
+form = "<form>?</form>",
+fieldset = "<fieldset>?</fieldset>",
+legend = "<legend>?</legend>",
 space = " ";
 
 (function(){
@@ -82,13 +85,28 @@ space = " ";
     	  ].join(' '));
 
     },
+    
+    _jLink = window.jLink,
+    jLink = window.jLink = function( name, value, href, args ) {
+      return jTag(a, value, [jAttribute("id", name), jAttribute("href", href || "#"), args || ""].join(' '));
+    },
+    
+    _jSubmit = window.jSubmit,
+    jSubmit = window.jSubmit = function( name, value ) {
+      return jInput(name, value || "Submit", "submit");
+    },
+    _jReset = window.jReset,
+    jReset = window.jReset = function( name, value ) {
+      return jInput(name, value || "Reset", "reset");
+    },
+
     _jText = window.jText,
     jText = window.jText = function( name, value ) {
       return jInput(name, value, "text");
     },
     _jLabel = window.jLabel,
     jLabel = window.jLabel = function( name, value, args ) {
-      return jTag(label, value, jAttribute("for", name) + args + "");
+      return jTag(label, value, jAttribute("for", name) + (args || ""));
     };
     _jHidden = window.jHidden,
     jHidden = window.jHidden = function( name, value ) {
@@ -115,10 +133,8 @@ space = " ";
             options += jTag(option, values[i].name, jAttribute("value", values[i].id));
         } else {
             options += jTag(option, values[i], jAttribute("value", values[i]));
-            
         }
       }
-      alert(options);
       return jTag(select, options, [args || "", jAttribute("id", name)].join(' '));
     };
 
@@ -150,5 +166,28 @@ space = " ";
       id = jAttribute("id", id);
       
       return jTag(div, innerHtml, [attributes || "", classes, id].join(' '));
+    },
+    _jTable = window.jTable, 
+    jTable = window.jTable = function (headers, data, args) {
+      header_markup = "";
+      for(i = 0; i < headers.length; i++) {
+        header_markup += jTag(th, headers[i]);
+      }
+      rows = "";
+      for(i = 0; i < data.length; i++) {
+        rows += jTag(tr, function () {
+          columns = "";
+          for(y = 0; y < data[i].length; y++) {
+            columns += jTag(td, data[i][y]);
+          }
+          return columns;
+        });
+      }
+      return jTag(table, 
+        jTag(thead, jTag(tr, header_markup)) +
+        jTag(tbody, rows)
+        , args || "")
+      
     }
+    
 })();

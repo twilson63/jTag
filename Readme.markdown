@@ -1,6 +1,6 @@
-# jTag Javascript Library
+# jTag Javascript Library v 0.3.0
 
-This library makes it really easy to generate markup in javascript:
+This library makes it really easy to generate html markup in javascript:
 
     document.write(
       jTag(h1, "Welcome to jTag") +
@@ -15,7 +15,10 @@ This library makes it really easy to generate markup in javascript:
       )
     );
     
-[output]
+# Lab
+
+Check out the jTag Lab at [jtag2html.heroku.com](jtag2html.heroku.com)
+
 
 # Welcome to jTag
 
