@@ -57,6 +57,13 @@ space = " ";
 
   jTag.fn = jTag.prototype = {
     init: function( tag, text, args ) {
+      if(typeof(tag) != "string") {
+        throw "tag must be of type string not:" + typeof(tag) + " text is:" + text;
+      }
+      if (tag.match(/\?/) == null) {
+        throw "tag must have ? in expression: " + tag;
+      } 
+      
       if (args) {
         val = tag.replace(/>\?/, " " + args + ">\?")
         val = val.replace(/\?/, text);
@@ -75,7 +82,7 @@ space = " ";
 
     _jInput = window.jInput,
     jInput = window.jInput = function( name, value, type, args ) {
-    	return jTag(input, "", 
+    	return jTag("<input>?</input>", "", 
     	  [ 
     	  jAttribute("id", type == "radio" ? [name,value].join('_') : name),
     	  jAttribute("name", name), 
@@ -88,7 +95,7 @@ space = " ";
     
     _jLink = window.jLink,
     jLink = window.jLink = function( name, value, href, args ) {
-      return jTag(a, value, [jAttribute("id", name), jAttribute("href", href || "#"), args || ""].join(' '));
+      return jTag("<a>?</a>", value, [jAttribute("id", name), jAttribute("href", href || "#"), args || ""].join(' '));
     },
     
     _jSubmit = window.jSubmit,
@@ -106,7 +113,7 @@ space = " ";
     },
     _jLabel = window.jLabel,
     jLabel = window.jLabel = function( name, value, args ) {
-      return jTag(label, value, jAttribute("for", name) + (args || ""));
+      return jTag("<label>?</label>", value, jAttribute("for", name) + (args || ""));
     };
     _jHidden = window.jHidden,
     jHidden = window.jHidden = function( name, value ) {
@@ -118,7 +125,7 @@ space = " ";
     };
     _jArea = window.jArea,
     jArea = window.jArea = function( name, value, attr ) {
-      return jTag(textarea, value || "", [attr || "", jAttribute("id", name)].join(' ') );
+      return jTag("<textarea>?</textarea>", value || "", [attr || "", jAttribute("id", name)].join(' ') );
     };
     _jCheck = window.jCheck,
     jCheck = window.jCheck = function( name, value, args ) {
@@ -135,7 +142,7 @@ space = " ";
             options += jTag(option, values[i], jAttribute("value", values[i]));
         }
       }
-      return jTag(select, options, [args || "", jAttribute("id", name)].join(' '));
+      return jTag("<select>?</select>", options, [args || "", jAttribute("id", name)].join(' '));
     };
 
     _jDiv = window.jDiv,
