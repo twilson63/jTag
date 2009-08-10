@@ -76,7 +76,7 @@ space = " ";
 
   var 
     _jAttribute = window.jAttribute,
-    jAttribute = window.jAttribute = function( attr, value ) {
+    jAt = window.jAt = jAttribute = window.jAttribute = function( attr, value ) {
       return "a='b'".replace(/a/, attr).replace(/b/, value); 
     },
 
@@ -99,21 +99,21 @@ space = " ";
     },
     
     _jSubmit = window.jSubmit,
-    jSubmit = window.jSubmit = function( name, value ) {
-      return jInput(name, value || "Submit", "submit");
+    jSubmit = window.jSubmit = function( name, value, args ) {
+      return jInput(name, value || "Submit", "submit", args);
     },
     _jReset = window.jReset,
-    jReset = window.jReset = function( name, value ) {
-      return jInput(name, value || "Reset", "reset");
+    jReset = window.jReset = function( name, value, args ) {
+      return jInput(name, value || "Reset", "reset", args);
     },
 
     _jText = window.jText,
-    jText = window.jText = function( name, value ) {
-      return jInput(name, value, "text");
+    jText = window.jText = function( name, value, args ) {
+      return jInput(name, value, "text", args || "");
     },
     _jLabel = window.jLabel,
     jLabel = window.jLabel = function( name, value, args ) {
-      return jTag("<label>?</label>", value, jAttribute("for", name) + (args || ""));
+      return jTag("<label>?</label>", value, jAttribute("for", name) + space + (args || ""));
     };
     _jHidden = window.jHidden,
     jHidden = window.jHidden = function( name, value ) {
