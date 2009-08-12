@@ -14,6 +14,13 @@ Pickle().Step({
 });  
 
 Pickle().Step({
+  instruction: /^I should see a "([^\"]*)" control for "([^\"]*)"$/,
+	test: function (args) {
+    return $(args[0] + '[for=' + args[1] + ']').length == 1;
+	}
+});  
+
+Pickle().Step({
   instruction: /^I create a "([^\"]*)" control called "([^\"]*)" with "([^\"]*)"$/,
 	test: function(args) {
 		$('body').append(window[args[0]](args[1],args[2]));
