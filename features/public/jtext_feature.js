@@ -28,6 +28,15 @@ Pickle().Feature({
 
 		$('body').empty();  	
 	},
+	ComplexName: function () {
+    this.Background();
+  
+		When('I create a basic "jText" control called "person[first_name]"');
+		Then('I should see a "input" control called "person_first_name"'); 
+		
+		$('body').empty();
+		
+	},
 	Background: function  () {
 
 	  $('body').empty();

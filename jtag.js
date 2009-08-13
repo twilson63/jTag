@@ -84,7 +84,7 @@ space = " ";
     jInput = window.jInput = function( name, value, type, args ) {
     	return jTag("<input>?</input>", "", 
     	  [ 
-    	  jAttribute("id", type == "radio" ? [name,value].join('_') : name),
+    	  jAttribute("id", type == "radio" ? [name.split('[').join('_').replace(/\]/g,''),value].join('_') : name.split('[').join('_').replace(/\]/g,'')),
     	  jAttribute("name", name), 
     	  jAttribute("value", value || ""), 
     	  jAttribute("type", type),
@@ -125,7 +125,7 @@ space = " ";
     };
     _jArea = window.jArea,
     jArea = window.jArea = function( name, value, attr ) {
-      return jTag("<textarea>?</textarea>", value || "", [attr || "", jAttribute("id", name)].join(' ') );
+      return jTag("<textarea>?</textarea>", value || "", [attr || "", jAt("id", name.split('[').join('_').replace(/\]/g,'')), jAt("name", name)].join(' ') );
     };
     _jCheck = window.jCheck,
     jCheck = window.jCheck = function( name, value, args ) {
@@ -142,7 +142,7 @@ space = " ";
             options += jTag(option, values[i], jAttribute("value", values[i]));
         }
       }
-      return jTag("<select>?</select>", options, [args || "", jAttribute("id", name)].join(' '));
+      return jTag("<select>?</select>", options, [args || "", jAt("id", name.split('[').join('_').replace(/\]/g,'')), jAt("name",name)].join(' '));
     };
 
     _jDiv = window.jDiv,
