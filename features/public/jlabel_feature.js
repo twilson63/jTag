@@ -9,7 +9,16 @@ Pickle().Feature({
 		$('body').empty();
 
 	},	
-	Background: function  () {
+	Complex: function() {
+    this.Background();
+  
+		When('I create a basic "jLabel" control called "complex[name]"');
+		Then('I should see a "label" control for "complex_name"'); 
+		
+		$('body').empty();
+		
+	},		
+  Background: function  () {
 	  $('body').empty();
 	}
 

@@ -7,7 +7,7 @@ Pickle().Feature({
 		Then('I should see a "textarea" control called "myarea"'); 
   	$('body').empty();
   },
- 	ComplexName: function () {
+ 	Complex: function () {
    this.Background();
   
 		When('I create a basic "jArea" control called "person[comments]"');

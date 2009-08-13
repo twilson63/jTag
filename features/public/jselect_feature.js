@@ -7,7 +7,7 @@ Pickle().Feature({
 		Then('I should see a "select" control called "myselect"'); 
   	$('body').empty();
   },
- 	ComplexName: function () {
+ 	Complex: function () {
    this.Background();
   
 		When('I create a basic "jSelect" control called "person[favorite_color]" with "red, blue, green"');

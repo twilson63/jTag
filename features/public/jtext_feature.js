@@ -28,7 +28,7 @@ Pickle().Feature({
 
 		$('body').empty();  	
 	},
-	ComplexName: function () {
+	Complex: function () {
     this.Background();
   
 		When('I create a basic "jText" control called "person[first_name]"');

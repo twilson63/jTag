@@ -113,7 +113,7 @@ space = " ";
     },
     _jLabel = window.jLabel,
     jLabel = window.jLabel = function( name, value, args ) {
-      return jTag("<label>?</label>", value, jAttribute("for", name) + space + (args || ""));
+      return jTag("<label>?</label>", value, jAt("for", name.split('[').join('_').replace(/\]/g,'')) + space + (args || ""));
     };
     _jHidden = window.jHidden,
     jHidden = window.jHidden = function( name, value ) {
