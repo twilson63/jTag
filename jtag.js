@@ -114,9 +114,9 @@ _space = " ";
       options = "";
       for(i = 0; i < values.length; i++) {
         if(values[i].id && values[i].name) {
-            options += jTag(option, values[i].name, jAt("value", values[i].id));
+            options += jTag("option", values[i].name, jAt("value", values[i].id));
         } else {
-            options += jTag(option, values[i], jAt("value", values[i]));
+            options += jTag("option", values[i], jAt("value", values[i]));
         }
       }
       return jTag("select", options, [args || "", jAt("id", name.split('[').join('_').replace(/\]/g,'')), jAt("name",name)]);
@@ -176,6 +176,10 @@ _space = " ";
     _jList = window.jList,
     jList = window.jList = function (items, attributes) {
       var line_items = "";
+      if(typeof(items) == "string"){
+        items = items.split(',');
+      }
+      
       for(i = 0; i < items.length; i++) {
         line_items += jTag("li", items[i]);
       }

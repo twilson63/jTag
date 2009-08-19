@@ -57,3 +57,34 @@ Pickle().Step({
     return $('#' + args[0]).css(args[1]) == args[2]; 
 	}
 });
+
+Pickle().Step({
+  instruction: /^I create a "([^\"]*)" tag with "([^\"]*)"$/,
+  test: function(args) {
+    $('body').append(window[args[0]](args[1]));
+    return true;
+  }
+});
+
+Pickle().Step({
+  instruction: /^I should see a "([^\"]*)" tag$/,
+  test: function (args) {
+    return $(args[0]).length == 1; 
+  }
+});
+
+Pickle().Step({
+  instruction: /^I should see a "([^\"]*)" tag with "([^\"]*)"$/,
+  test: function (args) {
+   return $(args[0] + ':contains("' + args[1] + '")').length == 1; 
+  }
+});
+
+
+Pickle().Step({
+  instruction: /^I should not see a "([^\"]*)" tag with "([^\"]*)"$/,
+  test: function (args) {
+    return $(args[0] + ':contains("' + args[1] + '")').length == 0; 
+  }
+});
+
