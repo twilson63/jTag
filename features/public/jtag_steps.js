@@ -88,3 +88,37 @@ Pickle().Step({
   }
 });
 
+Pickle().Step({
+  instruction: /^I create a link "([^\"]*)" with a url of "([^\"]*)"$/,
+  test: function (args) {
+    $('body').append(jLink(args[0], args[1]));
+    return true; 
+  }
+});
+
+
+Pickle().Step({
+  instruction: /^jQuery should see "([^\"]*)"$/,
+  test: function (args) {
+    return $(args[0]).length == 1;
+  }
+});
+
+Pickle().Step({
+  instruction: /^I create a "([^\"]*)" tag with "([^\"]*)" content as "([^\"]*)"$/,
+  test: function(args) {
+    $('body').append(window[args[0]](args[2].split(','), args[1]));
+    return true;
+  }
+});
+
+Pickle().Step({
+  instruction: /^I create a jDiv with "([^\"]*)" content as "([^\"]*)" and "([^\"]*)"$/,
+  test: function(args) {
+    $('body').append(jDiv(args[1],args[2].split(','), args[0]));
+    return true;
+  }
+})
+
+
+

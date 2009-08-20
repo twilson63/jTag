@@ -71,8 +71,8 @@ _space = " ";
     },
     
     _jLink = window.jLink,
-    jLink = window.jLink = function( name, value, href, args ) {
-      return jTag("a", value, [jAt("id", name), jAt("href", href || "#"), args || ""]);
+    jLink = window.jLink = function( value, href, args ) {
+      return jTag("a", value, [jAt("href", href || "#"), args || ""]);
     },
     
     _jSubmit = window.jSubmit,
