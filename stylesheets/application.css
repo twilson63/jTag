@@ -1,0 +1,37 @@
+body {
+	background: #000;
+	width: 960px;
+	color: #fff;
+	margin: 0px auto 0px;
+	padding: 0px;
+	
+	}
+
+#container {
+	background: #000;
+	color: #fff;
+	width: 950px;
+	margin: 10px auto 10px;
+	padding: 0px 20px 20px 20px;
+	/* border: double #C0C0C0; */
+	}
+	
+h1, h2, h3, h4, h5, a {
+  color:#fff;
+}
+
+ul {
+  margin-top:150px;
+  text-align : right;
+  list-style:none;
+}
+
+a {
+  font-size:20px;
+  text-decoration:none;
+}
+
+#content ul {
+  margin-top:5px;
+  text-align:left;
+}

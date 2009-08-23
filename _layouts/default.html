@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" media="screen" type="text/css" href="http://s3.amazonaws.com/jrs.blueprint-css/screen.css"></link>
+    <!--[if IE]> <link rel="stylesheet" href="http://s3.amazonaws.com/jrs.blueprint-css/ie.css" type="text/css" media="screen, projection" /> <![endif]-->
+    <link rel="stylesheet" media="screen" type="text/css" href="/stylesheets/syntax.css"></link>
+
+    <link rel="stylesheet" media="screen" type="text/css" href="/stylesheets/application.css"></link>
+
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="span-4">
+        <ul>
+          <li><a href="/index.html#what">What</a></li>
+          <li><a href="/index.html#why">Why</a></li>
+          <li><a href="/index.html#usage">Usage</a></li>
+          <li><a href="/docs/index.html">Docs</a></li>
+          <li><a href="/index.html#installing">Installing</a></li>
+          <li><a href="/index.html#bugs">Bugs/Feature Requests</a></li>
+          <li><a href="/index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div id='content' class="prepend-1 span-14">
+        <h1>{{ page.title }}</h1>
+
+        {{ content }}
+      </div>
+    </div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="/javascripts/application.js"></script>
+
+  </body>
+</html>

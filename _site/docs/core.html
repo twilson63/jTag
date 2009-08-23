@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jTag Documentation Core</title>
+    <link rel="stylesheet" media="screen" type="text/css" href="http://s3.amazonaws.com/jrs.blueprint-css/screen.css"></link>
+    <!--[if IE]> <link rel="stylesheet" href="http://s3.amazonaws.com/jrs.blueprint-css/ie.css" type="text/css" media="screen, projection" /> <![endif]-->
+    <link rel="stylesheet" media="screen" type="text/css" href="/stylesheets/syntax.css"></link>
+
+    <link rel="stylesheet" media="screen" type="text/css" href="/stylesheets/application.css"></link>
+
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="span-4">
+        <ul>
+          <li><a href="/index.html#what">What</a></li>
+          <li><a href="/index.html#why">Why</a></li>
+          <li><a href="/index.html#usage">Usage</a></li>
+          <li><a href="/docs/index.html">Docs</a></li>
+          <li><a href="/index.html#installing">Installing</a></li>
+          <li><a href="/index.html#bugs">Bugs/Feature Requests</a></li>
+          <li><a href="/index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div id='content' class="prepend-1 span-14">
+        <h1>jTag Documentation Core</h1>
+
+        <h2 id='jtag_core'>jTag Core</h2>
+
+<p>The jTag Core contains:</p>
+
+<h3 id='jtagtag_contents_attributes'>jTag(tag, contents, attributes)</h3>
+
+<ul>
+<li>tag parameter - is a string that contains a ?, jtag uses that ? to replace or embed the contents, also the string will need to contain one &gt; symbol, so that jtag can place the attribute list in front of the &gt; symbol.</li>
+</ul>
+
+<p>For example: HTML</p>
+
+<pre><code>&lt;p style=&quot;color:green;&quot;&gt;Hello World&lt;/p&gt;</code></pre>
+
+<p>Using jTag Core:</p>
+
+<pre><code>jTag(&quot;&lt;p&gt;?&lt;/p&gt;&quot;, &quot;Hello World&quot;, &quot;style=&#39;color:green;&#39;&quot;)</code></pre>
+
+<p>This is the base core method, with jTag we build on the core to reduce this statement.</p>
+
+<p>Normal jTag:</p>
+
+<pre><code>jTag(p, &quot;Hello World&quot;, jAt(&#39;style&#39;,&#39;color:green;&#39;))</code></pre>
+      </div>
+    </div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="/javascripts/application.js"></script>
+
+  </body>
+</html>
