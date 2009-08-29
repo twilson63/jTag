@@ -17,10 +17,22 @@ Just was not going to work for us, from a maintainable standpoint, we looked as 
 
     jDiv('content',
       jTag('h1', "Lorem Ipsum") +
-      jTag('p', "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt odio at mauris elementum sed commodo lacus mollis. Phasellus varius neque nec purus ultricies tempus. Nunc semper urna tincidunt arcu porttitor sed egestas velit pellentesque. Curabitur mauris ipsum, rhoncus a pulvinar dignissim, mollis nec elit. Praesent pharetra tincidunt lacus, eget feugiat nisi porttitor vel.", 
+      jTag('p', "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Aenean tincidunt odio at mauris elementum sed commodo lacus mollis.
+      Phasellus varius neque nec purus ultricies tempus. Nunc semper urna
+      tincidunt arcu porttitor sed egestas velit pellentesque. Curabitur
+      mauris ipsum, rhoncus a pulvinar dignissim, mollis nec elit.
+      Praesent pharetra tincidunt lacus, eget feugiat nisi porttitor
+      vel.", 
         jAt('style','font-size:3em;color:green;')
       ) +
-      jTag('p', "Phasellus pellentesque porttitor mauris eget semper. Nunc libero ante, egestas at eleifend et, venenatis ac risus. Aenean lectus arcu, rhoncus vehicula luctus non, dignissim ut tortor. Nulla tincidunt orci malesuada lorem laoreet egestas. Ut volutpat rutrum tristique. Mauris sagittis quam ut sem semper ac sollicitudin lectus dignissim. Proin luctus rhoncus interdum. Sed tristique sodales sapien, eget ornare est lacinia quis.",
+      jTag('p', "Phasellus pellentesque porttitor mauris eget semper. Nunc
+      libero ante, egestas at eleifend et, venenatis ac risus. Aenean
+      lectus arcu, rhoncus vehicula luctus non, dignissim ut tortor. Nulla
+      tincidunt orci malesuada lorem laoreet egestas. Ut volutpat rutrum
+      tristique. Mauris sagittis quam ut sem semper ac sollicitudin lectus
+      dignissim. Proin luctus rhoncus interdum. Sed tristique sodales
+      sapien, eget ornare est lacinia quis.",
         jAt('style','font-size:2em;color:blue;')
       )
     );
