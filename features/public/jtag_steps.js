@@ -1,4 +1,12 @@
 Pickle().Step({
+  instruction: /^I eval (.*)$/,
+  test: function(args) {
+    $('body').append(eval(args[0]));
+    return true;
+  }
+});
+
+Pickle().Step({
 	instruction: /^I create a basic "([^\"]*)" control called "([^\"]*)"$/,
 	test: function(args) {
 		$('body').append(window[args[0]](args[1]));

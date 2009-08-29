@@ -123,26 +123,27 @@ _space = " ";
     };
 
     _jDiv = window.jDiv,
-    jDiv = window.jDiv = function( arg1, arg2, arg3, arg4 ) {
+    jDiv = window.jDiv = function() {
       id = "";
       classes = [];
       innerHtml = "";
       attributes = "";
     
-      if(typeof(arg1) == "object") {
-        classes = arg1;
-        innerHtml = arg2;
-        attributes = arg3;
-      }
-      else if(typeof(arg1) == "string") {
-        id = arg1;
-        if (typeof(arg2) == "object") {
-          classes = arg2;
-          innerHtml = arg3;
-          attributes = arg4;
+      if(arguments.length == 1 && typeof(arguments[0]) == "string") {
+        innerHtml = arguments[0];
+      } else if(arguments.length >= 1 && typeof(arguments[0]) == "object") {
+        classes = arguments[0];
+        innerHtml = arguments[1];
+        attributes = arguments[2];
+      } else if(arguments.length > 1 && typeof(arguments[0]) == "string") {
+        id = arguments[0];
+        if (typeof(arguments[1]) == "object") {
+          classes = arguments[1];
+          innerHtml = arguments[2];
+          attributes = arguments[3];
         } else {
-          innerHtml = arg2;
-          attributes = arg3;
+          innerHtml = arguments[1];
+          attributes = arguments[2];
         }
       }
       
