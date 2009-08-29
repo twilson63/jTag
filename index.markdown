@@ -62,7 +62,20 @@ HTML Output:
 
 #### Installing
 
+You can download from:
+
+* [jtag.js](http://s3.amazonaws.com/jackhq.cdn/jtag-0.6.0.js)
+* [jtag.min.js](http://s3.amazonaws.com/jackhq.cdn/jtag-0.6.0.min.js)
+
+#### Contribute
+
+[jtag@jackhq.com](mailto://jtag@jackhq.com)
+
+
 #### Bugs/Feature Requests
+
+[jtag@jackhq.com](mailto://jtag@jackhq.com)
 
 #### Contact
 
+[jtag@jackhq.com](mailto://jtag@jackhq.com)
