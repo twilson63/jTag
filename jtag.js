@@ -1,5 +1,5 @@
 /*
-* Tag JavaScript Library v0.5.0
+* Tag JavaScript Library v0.6.0
 * http://tag.jackhq.com
 *
 * Copyright (c) 2009 Jack Russell Software Company, LLC
