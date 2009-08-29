@@ -25,7 +25,7 @@ This is the base core method, with jTag we build on the core to reduce this stat
 
 Normal jTag:
 
-    jTag(p, "Hello World", jAt('style','color:green;'))
+    jTag("p", "Hello World", jAt('style','color:green;'))
     
 Common jTags
 
