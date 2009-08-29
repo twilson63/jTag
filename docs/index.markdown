@@ -7,8 +7,8 @@ title: jTag Documentation
 
 Welcome to the jTag Documentation index
 
-* [Core](/docs/core.html)
-* [jDiv](/docs/jdiv.html)
-* [jAt](/docs/jat.html)
-* [jLink](/docs/jlink.html)
-* [jText](/docs/jtext.html)
+* [Core](/jTag/docs/core.html)
+* [jDiv](/jTag/docs/jdiv.html)
+* [jAt](/jTag/docs/jat.html)
+* [jLink](/jTag/docs/jlink.html)
+* [jText](/jTag/docs/jtext.html)

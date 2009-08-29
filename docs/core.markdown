@@ -5,6 +5,8 @@ title: jTag Documentation Core
 
 ## jTag Core
 
+[Return to Documentation](/jTag/docs/index.html)
+
 The jTag Core contains:
 
 ### jTag(tag, contents, attributes)
@@ -25,4 +27,8 @@ Normal jTag:
 
     jTag(p, "Hello World", jAt('style','color:green;'))
     
+Common jTags
 
+    div, p, span, ul, li, input, label, textarea, table, tr, th, td, etc.
+
+[Return to Documentation](/jTag/docs/index.html)
