@@ -7,13 +7,20 @@ title: jTag
 
 jTag is a javascript library makes generating html markup a breeze.  
 
-#### Why
+#### Why jTag
 
-We need a way to use javascript to inject a lot of html in our applications.  
+Are projects continue to require more usage of javascript and the need to inject HTML into the page dynamically.  Instead of making round trips to the server each time to request html that needed to be injected, we needed a way to write html in our javascript code.  The following:
 
     document.write("<p>Some Paragraph</p>");
-    
-Just was not going to work for us, from a maintainable standpoint, we looked as some of the javascript markup parsers as well, and just could not find one that would work for us.  So we came up with jTag a lightweight library that allows us to generate markup in javascript.  This allows us virtually eliminate markup parsing errors when we decide to inject html via javascript.  For example, appending a row to the end of a table.  Or dynamically generating html for a form.  Since all jTag objects return strings, you can format the functions to be very readable as well.
+
+Was not going to work!
+
+1. It would create hard to detect typos and markup bugs
+2. Using with data and other variables can create a mess.
+3. We wanted our code to be as clear and as readable as possible.
+  
+
+#### Usage
 
     jDiv('content',
       jTag('h1', "Lorem Ipsum") +
@@ -38,21 +45,20 @@ Just was not going to work for us, from a maintainable standpoint, we looked as 
     );
     
 HTML Output:
-
-
-#### Usage
-
-    document.write(
-      jDiv("mydiv", 
-        jTag(p, "Hello From jTag")
-      )
-    );
-
-Creates:
-
-    <div id="mydiv">
-      <p>Hello From jTag</p>
-    </div>
+    <div id="content"><p style="font-size:3em;color:green">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Aenean tincidunt odio at mauris elementum sed commodo lacus mollis.
+    Phasellus varius neque nec purus ultricies tempus. Nunc semper urna
+    tincidunt arcu porttitor sed egestas velit pellentesque. Curabitur
+    mauris ipsum, rhoncus a pulvinar dignissim, mollis nec elit.
+    Praesent pharetra tincidunt lacus, eget feugiat nisi porttitor
+    vel.</p><p style="font-size:2em;color:blue;">Phasellus pellentesque porttitor mauris eget semper. Nunc
+    libero ante, egestas at eleifend et, venenatis ac risus. Aenean
+    lectus arcu, rhoncus vehicula luctus non, dignissim ut tortor. Nulla
+    tincidunt orci malesuada lorem laoreet egestas. Ut volutpat rutrum
+    tristique. Mauris sagittis quam ut sem semper ac sollicitudin lectus
+    dignissim. Proin luctus rhoncus interdum. Sed tristique sodales
+    sapien, eget ornare est lacinia quis.</p>
+    
 
 #### Installing
 
