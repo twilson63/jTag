@@ -1,4 +1,4 @@
-# jTag Javascript Library v 0.3.0
+# jTag Javascript Library v 0.6.0
 
 This library makes it really easy to generate html markup in javascript:
 
