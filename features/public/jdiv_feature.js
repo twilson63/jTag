@@ -3,17 +3,11 @@ Pickle().Feature({
  	Basic: function() {
 	  $('body').empty();
 			
-		When('I eval jDiv("Hello World")');
+		When('I eval jTag(function() { div("Hello World") })');
 		Then('jQuery should see "div:contains(\'Hello World\')"');	 
 		
-		When('I eval jDiv("mydiv","Blue World")');
+		When('I eval jTag(function() { div({"id": "mydiv"},"Blue World") })');
 		Then('jQuery should see "div#mydiv:contains(\'Blue World\')"');
-
-		When('I eval jDiv([\'one\'],"Green World")');
-		Then('jQuery should see "div.one:contains(\'Green World\')"');
-		
-		When('I eval jDiv("dtag", [\'two\'],"Yellow World")');
-		Then('jQuery should see "div#dtag.two:contains(\'Yellow World\')"');
 		
 		$('body').empty();
 			

@@ -21,12 +21,14 @@
       // Feature: Test Headers
       try {
         document.write(
-          jTag(h1, "H1 Tag") +
-          jTag(h2, "H2 Tag") +
-          jTag(h3, "H3 Tag") +
-          jTag(h4, "H4 Tag") +
-          jTag(h5, "H5 Tag") +
-          jTag(h6, "H6 Tag") 
+          jTag(function() {
+            h1("H1 Tag");
+            h2("H2 Tag");
+            h3("H3 Tag");
+            h4("H4 Tag");
+            h5("H5 Tag");
+            h6("H6 Tag");
+          })
         );
       } catch (err) {
         alert(err);
@@ -34,10 +36,15 @@
       // Feature: Test HR and BR
       try {
         document.write(
-          jTag(p, "Before HR") +
-          jTag(hr) +
-          jTag(p, "After HR") +
-          jTag(p, "Before BR" + jTag(br) + "After BR")
+          // jTag(p, "Before HR") +
+          // jTag(hr) +
+          // jTag(p, "After HR") +
+          // jTag(p, "Before BR" + jTag(br) + "After BR")
+          jTag(function(){
+            p("Before HR");
+            hr("");
+            p("After HR");
+          })
         );
       } catch (err) {
         alert(err);
@@ -46,22 +53,35 @@
       // Feature: Test Span and Div tage
       try {
         document.write(
-          jTag(div, "I am in a div", jAttribute("id","mydiv")) +
-          jTag(span, "I am in a span", jAttribute("color","blue"))
+          //jTag(div, "I am in a div", jAttribute("id","mydiv")) +
+          //jTag(span, "I am in a span", jAttribute("color","blue"))
+          jTag(function(){
+            div({"id": "mydiv"}, "I am a div");
+            span({"style":"color:blue;"}, "I am in a span");
+          })
         );
       } catch (err) {
         alert(err);
       }
       
       // Feature: Radio Button Test
-      x = [{ name: "radio", value: 1}, {name: "radio", value: 2}, { name: "radio", value: 3}];
       try {
         document.write(
-          jTag(h3, "Feature: Radio Button Test") +
-          $.map(x, function (n, i) {
-            return jLabel(n.name, n.name, jAttribute("style", "display:inline;")) +
-             jRadio(n.name, n.value, jAttribute("style", "display:inline;"));
-          }).join(' ')
+          jTag(function(){
+            h3("Feature: Radio Button Test");
+            label({"for": "radio_1"}, "Radio 1");
+            br("");
+            input({"name": "radio", "type": "radio", "value": "1"});
+
+            label({"for": "radio_2"}, "Radio 2");
+            br("");
+            input({"name": "radio", "type": "radio", "value": "2"});
+
+            label({"for": "radio_3"}, "Radio 3");
+            br("");
+            input({"name": "radio", "type": "radio", "value": "3"});
+          
+          })
         );
       }
       catch (err) {
@@ -71,11 +91,19 @@
       x = [{ name: "check1", value: 1}, {name: "check2", value: 2}, { name: "check3", value: 3}];
       try {
         document.write(
-          jTag(h3, "Feature: Check Box Test") +
-          $.map(x, function (n, i) {
-            return jLabel(n.name, n.name, jAttribute("style", "display:inline;")) +
-             jCheck(n.name, n.value, jAttribute("style", "display:inline;"));
-          }).join(' ')
+          jTag(function(){
+            h3("Feature: Check Box Test");
+            for(z in x) {
+              label(z.name);
+              input({"name": z.name, "value": z.value, "type": "checkbox"});
+              br("");
+            }
+          })
+          // jTag(h3, "Feature: Check Box Test") +
+          // $.map(x, function (n, i) {
+          //   return jLabel(n.name, n.name, jAttribute("style", "display:inline;")) +
+          //    jCheck(n.name, n.value, jAttribute("style", "display:inline;"));
+          // }).join(' ')
         );
       }
       catch (err) {
@@ -85,9 +113,11 @@
       // Feature: Text Box Test
       try {
         document.write(
-          jTag(h3, "Feature: Text Box Test") +
-          jLabel("name", "Full Name") +
-          jText("name")
+          jTag(function(){
+            h3("Feature: Text Box Test");
+            label({"for": "name"}, "Full Name");
+            input({"name": "name", "type": "text"});
+          })
         );
       }
       catch (err) {
@@ -97,9 +127,14 @@
       // Feature: Select Test
       try {
         document.write(
-          jTag(h3, "Feature: Select Test") +
-          jLabel("name", "Favorite Color") +
-          jSelect("name",["Red","Green","Blue"])
+          jTag(function(){
+            h3("Feature: Select Tests");
+            label({"for": "name"}, "Favorite Color");
+            select({"name": "color"}, function(){
+              option({"value": "blue"}, "Blue");
+              option({"value": "green"}, "Green");
+            });
+          })
         );
       }
       catch (err) {
@@ -108,42 +143,42 @@
 
       try{
         document.write(
-        jDiv("id", "Test 1 SomeText") +
-        jDiv(["class1","class2"], "Test 2 :Inner HTML") +        
-        jDiv("someid", ["class1","class2"], "Test 3: Inner Html") 
+          jTag(function(){
+            div({"id": "myid", "class": "class1 class2"}, "Id's and Classes");
+          })
         );
       } catch (err) {
         alert(err);
       }
       // Feature: jSpan - Create a div class with a blueprint colspan
-      try {
-        document.write(
-          jDiv(["span-16"],
-            jTag(h3, "Feature: Select Test") +
-            jTag(p, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget metus arcu. Sed lorem lorem, mattis id gravida quis, mollis eu erat. Aliquam tincidunt lectus ac augue faucibus sit amet gravida ante imperdiet. Donec sodales lacus vel sapien lacinia blandit et et orci. Cras eu magna id metus ultrices tempus. Nulla et tortor et urna tincidunt porttitor. Proin scelerisque mattis suscipit. Maecenas vestibulum ornare nisi, non sodales risus scelerisque sed. Donec id felis ligula. Donec vestibulum turpis eu dolor fringilla sed vulputate ipsum dictum. Sed at est urna. Etiam quis tortor libero, et molestie diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;")
-           ) +
-          jDiv("myid", ["span-7"],
-            jDiv("id",
-              jTag(p,"Cras non vulputate erat. Etiam scelerisque purus ut turpis bibendum auctor non et risus. Aenean euismod augue eget dolor consectetur laoreet. Vestibulum nec faucibus elit. Aenean sed dui augue, ac tempor elit. Etiam euismod consectetur eleifend. Mauris suscipit placerat pellentesque. Suspendisse potenti. Donec diam massa, auctor sed tempus nec, tristique sed nibh. In hac habitasse platea dictumst. ")
-            )
-          )
-        );
-        }
-        catch (err) {
-          alert(err);
-        }
+      // try {
+      //   document.write(
+      //     jDiv(["span-16"],
+      //       jTag(h3, "Feature: Select Test") +
+      //       jTag(p, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget metus arcu. Sed lorem lorem, mattis id gravida quis, mollis eu erat. Aliquam tincidunt lectus ac augue faucibus sit amet gravida ante imperdiet. Donec sodales lacus vel sapien lacinia blandit et et orci. Cras eu magna id metus ultrices tempus. Nulla et tortor et urna tincidunt porttitor. Proin scelerisque mattis suscipit. Maecenas vestibulum ornare nisi, non sodales risus scelerisque sed. Donec id felis ligula. Donec vestibulum turpis eu dolor fringilla sed vulputate ipsum dictum. Sed at est urna. Etiam quis tortor libero, et molestie diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;")
+      //      ) +
+      //     jDiv("myid", ["span-7"],
+      //       jDiv("id",
+      //         jTag(p,"Cras non vulputate erat. Etiam scelerisque purus ut turpis bibendum auctor non et risus. Aenean euismod augue eget dolor consectetur laoreet. Vestibulum nec faucibus elit. Aenean sed dui augue, ac tempor elit. Etiam euismod consectetur eleifend. Mauris suscipit placerat pellentesque. Suspendisse potenti. Donec diam massa, auctor sed tempus nec, tristique sed nibh. In hac habitasse platea dictumst. ")
+      //       )
+      //     )
+      //   );
+      //   }
+      //   catch (err) {
+      //     alert(err);
+      //   }
 
       // Feature: Select Test
-      try {
-        document.write(
-          jTag(h3, "Feature: Select Test") +
-          jLabel("name", "Favorite Color") +
-          jSelect("name",[{ id: 1, name: "Red" },{ id: 2, name: "Blue" }])
-        );
-      }
-      catch (err) {
-        alert(err);
-      }
+      // try {
+      //   document.write(
+      //     jTag(h3, "Feature: Select Test") +
+      //     jLabel("name", "Favorite Color") +
+      //     jSelect("name",[{ id: 1, name: "Red" },{ id: 2, name: "Blue" }])
+      //   );
+      // }
+      // catch (err) {
+      //   alert(err);
+      // }
 
     </script>
     

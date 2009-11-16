@@ -1,25 +1,19 @@
 <html>
   <head>
-    <script type="text/javascript">
-      <script src="jtag.js" type="text/javascript"></script>
-    </script>
+    <script src="jtag.js" type="text/javascript"></script>
   </head>
   <body>
     <script type="text/javascript">
       document.write(
-        jTag(h1, "Welcome to jTag") +
-        jTag(h2, "jTag is the new black") +
-        jTag(p, 
-          "It is a new tag library that makes it super easy to create html in js" +
-          jTag(ul,
-            jTag(li,
-              "Option 1"
-            ) +
-            jTag(li,
-              "Option 2"
-            )
-          )
-        )
+        jTag(function() {
+          h1("Welcome to jTag");
+          h2("jTag is the new black");
+          p("It is a new tag library that makes it super easy to create html in js");
+          ul(function(){
+            li("Option 1");
+            li("Option 2");
+          });
+        })
       );
 
     </script>
