@@ -1,15 +1,12 @@
 /*
-* Tag JavaScript Library v0.9.0
+* jTag JavaScript Library v0.0.9
 * http://jtag.jackhq.com
 *
 * Copyright (c) 2009 Jack Russell Software Company, LLC
 * Licensed under the MIT license.
-* http://github.com/twilson63/jtag/License
+* http://github.com/twilson63/pickle/License
 *
-* Date: 2009-11-15 23:43:21 -0500 (Wed, 11 November 2009)
-* Revision: 000
 */
-
 (function() {
 
   var 
@@ -160,25 +157,6 @@
           jTag.fn.Markup.tag("hr", arguments[0], arguments[1]);
         }
       },
-      select: function() {
-        if ((arguments.length == 1) && (typeof(arguments[0]) == "object")) {
-          jTag.fn.Markup.tag("select", arguments[0], "");
-        } else if (arguments.length == 1) {
-          jTag.fn.Markup.tag("select", {}, arguments[0]);          
-        } else if (arguments.length == 2) {
-          jTag.fn.Markup.tag("select", arguments[0], arguments[1]);
-        }
-      },
-      option: function() {
-        if ((arguments.length == 1) && (typeof(arguments[0]) == "object")) {
-          jTag.fn.Markup.tag("option", arguments[0], "");
-        } else if (arguments.length == 1) {
-          jTag.fn.Markup.tag("option", {}, arguments[0]);          
-        } else if (arguments.length == 2) {
-          jTag.fn.Markup.tag("option", arguments[0], arguments[1]);
-        }
-      },
-
       label: function() {
         if ((arguments.length == 1) && (typeof(arguments[0]) == "object")) {
           jTag.fn.Markup.tag("label", arguments[0], "");
@@ -250,25 +228,16 @@
         } else if (arguments.length == 2) {
           jTag.fn.Markup.tag("a", arguments[0], arguments[1]);
         }
-      }, 
-      script: function() {
+      },
+      img: function() {
         if ((arguments.length == 1) && (typeof(arguments[0]) == "object")) {
-          jTag.fn.Markup.tag("script", arguments[0], "");
+          jTag.fn.Markup.tag("img", arguments[0], "");
         } else if (arguments.length == 1) {
-          jTag.fn.Markup.tag("script", {}, arguments[0]);          
+          jTag.fn.Markup.tag("img", {}, arguments[0]);
         } else if (arguments.length == 2) {
-          jTag.fn.Markup.tag("script", arguments[0], arguments[1]);
+          jTag.fn.Markup.tag("img", arguments[0], arguments[1]);
         }
-      }, 
-      link: function() {
-        if ((arguments.length == 1) && (typeof(arguments[0]) == "object")) {
-          jTag.fn.Markup.tag("link", arguments[0], "");
-        } else if (arguments.length == 1) {
-          jTag.fn.Markup.tag("link", {}, arguments[0]);          
-        } else if (arguments.length == 2) {
-          jTag.fn.Markup.tag("link", arguments[0], arguments[1]);
-        }
-      }, 
+      },
 
       tag: function(tag, attributes, body) {
         var attr_str = "";
