@@ -123,6 +123,20 @@
       catch (err) {
         alert(err);
       }
+      
+      // Feature: Text Area Test
+      try {
+        document.write(
+          jTag2(function(){
+            h3("Feature: Text Area Test");
+            label({"for": "name"}, "Full Name");
+            textarea({"name": "name", "type": "area"});
+          })
+        );
+      }
+      catch (err) {
+        alert(err);
+      }
 
       // Feature: Select Test
       try {
