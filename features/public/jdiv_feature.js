@@ -3,10 +3,10 @@ Pickle().Feature({
  	Basic: function() {
 	  $('body').empty();
 			
-		When('I eval jTag(function() { div("Hello World") })');
+		When('I eval jTag2(function() { div("Hello World") })');
 		Then('jQuery should see "div:contains(\'Hello World\')"');	 
 		
-		When('I eval jTag(function() { div({"id": "mydiv"},"Blue World") })');
+		When('I eval jTag2(function() { div({"id": "mydiv"},"Blue World") })');
 		Then('jQuery should see "div#mydiv:contains(\'Blue World\')"');
 		
 		$('body').empty();

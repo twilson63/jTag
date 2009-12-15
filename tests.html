@@ -2,7 +2,7 @@
   <head>
     <title>jTag Tests</title>
     <script src="jquery.min.js" type="text/javascript"></script>
-    <script src="jtag.js" type="text/javascript"></script>
+    <script src="jtag2.js" type="text/javascript"></script>
   </head>
   <body>
     <script type="text/css">
@@ -21,7 +21,7 @@
       // Feature: Test Headers
       try {
         document.write(
-          jTag(function() {
+          jTag2(function() {
             h1("H1 Tag");
             h2("H2 Tag");
             h3("H3 Tag");
@@ -40,7 +40,7 @@
           // jTag(hr) +
           // jTag(p, "After HR") +
           // jTag(p, "Before BR" + jTag(br) + "After BR")
-          jTag(function(){
+          jTag2(function(){
             p("Before HR");
             hr("");
             p("After HR");
@@ -55,7 +55,7 @@
         document.write(
           //jTag(div, "I am in a div", jAttribute("id","mydiv")) +
           //jTag(span, "I am in a span", jAttribute("color","blue"))
-          jTag(function(){
+          jTag2(function(){
             div({"id": "mydiv"}, "I am a div");
             span({"style":"color:blue;"}, "I am in a span");
           })
@@ -67,7 +67,7 @@
       // Feature: Radio Button Test
       try {
         document.write(
-          jTag(function(){
+          jTag2(function(){
             h3("Feature: Radio Button Test");
             label({"for": "radio_1"}, "Radio 1");
             br("");
@@ -91,7 +91,7 @@
       x = [{ name: "check1", value: 1}, {name: "check2", value: 2}, { name: "check3", value: 3}];
       try {
         document.write(
-          jTag(function(){
+          jTag2(function(){
             h3("Feature: Check Box Test");
             for(z in x) {
               label(z.name);
@@ -113,7 +113,7 @@
       // Feature: Text Box Test
       try {
         document.write(
-          jTag(function(){
+          jTag2(function(){
             h3("Feature: Text Box Test");
             label({"for": "name"}, "Full Name");
             input({"name": "name", "type": "text"});
@@ -127,7 +127,7 @@
       // Feature: Select Test
       try {
         document.write(
-          jTag(function(){
+          jTag2(function(){
             h3("Feature: Select Tests");
             label({"for": "name"}, "Favorite Color");
             select({"name": "color"}, function(){
@@ -143,7 +143,7 @@
 
       try{
         document.write(
-          jTag(function(){
+          jTag2(function(){
             div({"id": "myid", "class": "class1 class2"}, "Id's and Classes");
           })
         );
