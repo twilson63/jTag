@@ -14,6 +14,8 @@
   jTag2 = window.jTag2 = function() {
     if(arguments.length == 1) {
       return jTag2.fn.html(arguments[0]);
+    } else if (arguments.length == 3 && arguments[0] == "set") {
+      return jTag2.fn.set(arguments[1], arguments[2]);      
     } else {
       return jTag2.fn;
     }
@@ -294,8 +296,10 @@
       eval("with (jTag2().Markup) { " + contents + " }");
       return jTag2.fn.body;
     },
+    set: function(name, value) {
+      jTag2.fn.Markup[name] = value;
+      return jTag2.fn;
+    },
     body: ""
   }
-  
-
 })();
