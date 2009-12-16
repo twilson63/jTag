@@ -141,15 +141,6 @@
           jTag2.fn.Markup.tag("input", arguments[0], arguments[1]);
         }
       },
-      hidden: function() {
-        if ((arguments.length == 1) && (typeof(arguments[0]) == "object")) {
-          jTag2.fn.Markup.tag("hidden", arguments[0], "");
-        } else if (arguments.length == 1) {
-          jTag2.fn.Markup.tag("hidden", {}, arguments[0]);          
-        } else if (arguments.length == 2) {
-          jTag2.fn.Markup.tag("hidden", arguments[0], arguments[1]);
-        }
-      },
       textarea: function() {
         if ((arguments.length == 1) && (typeof(arguments[0]) == "object")) {
           jTag2.fn.Markup.tag("textarea", arguments[0], "");
