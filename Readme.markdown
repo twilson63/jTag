@@ -7,8 +7,8 @@ jTag2 is a javascript dsl that generates html markup.
     document.write(
       jTag2(function (){
         
-        h1("Welcome to " + title);
-        ul(function() {
+        h1({ style: "color:blue;" }, "Welcome to " + title);
+        ul({ style: "text-decoration:none;" }, function() {
           for(i = 0; i < 10; i++) {
             li("Line: " + i);
           }
@@ -16,6 +16,20 @@ jTag2 is a javascript dsl that generates html markup.
       });
     );
     
+## Documentation
+
+    [tag]([attribute object | content string | function])
+    
+---
+    
+    Each jTag2 element can have the following optional parameters:
+      
+      * Attribute Object, this is a javascript object that contains elements that represent html attributes for the given html element specified.
+      * Content String, if you have text information you can include a content string.
+      * Function, if this tag has one or more child tags, then you create your markup children by specifing a function and adding more jTag2 markup elements within the function.
+      
+      
+
         
 ## Lab
 
@@ -28,6 +42,7 @@ jTag2 Features
 
 * Javascript DSL to create HTML
 * Set Method for placing instance objects in the jTag2 scope
+* Easy to define attributes and content.
 
 ## Support
 

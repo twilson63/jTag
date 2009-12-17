@@ -4,9 +4,11 @@
   </head>
   <body>
     <script type="text/javascript">
+      jTag2('set', 'title', 'jTag2')
       document.write(
+        
         jTag2(function() {
-          h1("Welcome to jTag");
+          h1("Welcome to " + title);
           h2("jTag is the new black");
           p("It is a new tag library that makes it super easy to create html in js");
           ul(function(){
