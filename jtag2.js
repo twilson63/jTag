@@ -1,5 +1,5 @@
 /*
-* jTag2 JavaScript Library v0.1.0
+* jTag2 JavaScript Library v0.1.1
 * http://jtag.jackhq.com
 *
 * Copyright (c) 2009 Jack Russell Software Company, LLC

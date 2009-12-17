@@ -1,39 +1,37 @@
-# jTag Javascript Library v 0.6.0
+# jTag2 Javascript Library v 0.1.1
 
-This library makes it really easy to generate html markup in javascript:
-
+jTag2 is a javascript dsl that generates html markup.
+    
+    jTag2('set', 'title', "jTag2");
+    
     document.write(
-      jTag(h1, "Welcome to jTag") +
-      jTag(p, 
-        "jTag Features" +
-        jTag(ul,
-          jTag(li, "Optional Params - tag, text, attributes") +
-          jTag(li, "Easy way to structure markup for readability") +
-          jTag(li, "Integrates with jQuery and should work with other libs") +
-          jTag(li, "FormHelpers for writting forms and fields")
-        , jAttribute("id","feature_list"))
-      )
+      jTag2(function (){
+        
+        h1("Welcome to " + title);
+        ul(function() {
+          for(i = 0; i < 10; i++) {
+            li("Line: " + i);
+          }
+        })
+      });
     );
     
+        
 ## Lab
 
-Check out the jTag Lab at [jtag2html.heroku.com](http://jtag2html.heroku.com)
+Check out the jTag2 Lab at [jtag2.jackhq.com](http://jtag2.jackhq.com)
 
 
 ## Features
 
-jTag Features
+jTag2 Features
 
-* Optional Params - tag, text, attributes
-* Easy way to structure markup for read-ability
-* Integrates with jQuery and should work with other libs
-* FormHelpers for writting forms and fields
-* Simple tables
-* Simple Divs
+* Javascript DSL to create HTML
+* Set Method for placing instance objects in the jTag2 scope
 
 ## Support
 
-If you find a bug or have a change request submit to [http://groups.google.com/group/jtag-support](http://groups.google.com/group/jtag-support)
+[http://twitter.com/jtag2](http://twitter.com/jtag2)
 
 ## Contribution
 
